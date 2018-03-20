@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.huangyu.kotlinframework"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // test
+    testImplementation "junit:junit:$rootProject.ext.junit"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.testrunner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espresso"
+
+    // android support libraries
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.android_support"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.android_support"
+    implementation "com.android.support:design:$rootProject.ext.android_support"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraint_layout"
+
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$rootProject.ext.kotlin"
+    implementation "androidx.core:core-ktx:$rootProject.android_kotlin"
+
+    // dagger
+    implementation "com.google.dagger:dagger:$rootProject.dagger2"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger2"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$rootProject.dagger2"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger2"
+
+    // butterknife
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife"
+
+    // okhttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.logging_interceptor"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.adapter_rxjava"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.converter_gson"
+
+    // rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid2"
+}

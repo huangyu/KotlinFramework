@@ -9,6 +9,6 @@ import com.huangyu.kotlinframework.ui.main.view.IMainView
  */
 interface IMainPresenter<V : IMainView, M : IMainModel> : IPresenter<V, M> {
 
-    fun queryWeather(cityId: String)
+    fun queryWeather(location: String)
 
 }

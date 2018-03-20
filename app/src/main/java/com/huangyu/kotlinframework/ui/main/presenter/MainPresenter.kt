@@ -12,4 +12,15 @@ import javax.inject.Inject
  */
 class MainPresenter<V : IMainView, M : IMainModel> @Inject internal constructor(model: M, schedulerProvider: SchedulerProvider, disposable: CompositeDisposable) : BasePresenter<V, M>(model = model, schedulerProvider = schedulerProvider, compositeDisposable = disposable), IMainPresenter<V, M> {
 
+    override fun queryWeather(location: String) {
+        model?.let {
+            compositeDisposable.add(it.queryWeather(location)
+                    .compose(schedulerProvider.ioToMainObservableScheduler())
+                    .subscribe({ result ->
+                        println(result)
+                        getView()?.showText(result.toString())
+                    }, { err -> println(err) }))
+        }
+    }
+
 }

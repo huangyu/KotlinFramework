@@ -22,7 +22,7 @@ ext {
     okhttp = '3.9.1'
     logging_interceptor = '3.9.0'
     retrofit = '2.3.0'
-    adapter_rxjava = '2.3.0'
+    adapter_rxjava2 = '2.4.0'
     converter_gson = '2.3.0'
     rxandroid2 = '2.0.1'
     rxjava2 = '2.0.2'

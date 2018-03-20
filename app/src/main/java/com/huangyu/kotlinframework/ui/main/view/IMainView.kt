@@ -7,4 +7,6 @@ import com.huangyu.kotlinframework.mvp.IView
  */
 interface IMainView : IView {
 
+    fun showText(text: String)
+
 }

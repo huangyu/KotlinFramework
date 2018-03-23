@@ -22,7 +22,7 @@ class MainActivity : BaseActivity(), IMainView {
 
     override fun onResume() {
         super.onResume()
-        presenter.queryWeather("101280101") //
+        presenter.queryWeather("101280101")
     }
 
     override fun showText(text: String) {

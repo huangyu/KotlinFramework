@@ -15,10 +15,4 @@ abstract class BaseActivity : AppCompatActivity(), IView {
         AndroidInjection.inject(this)
     }
 
-    override fun showProgress() {
-    }
-
-    override fun hideProgress() {
-    }
-
 }

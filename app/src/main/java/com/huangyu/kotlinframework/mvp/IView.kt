@@ -5,8 +5,4 @@ package com.huangyu.kotlinframework.mvp
  */
 interface IView {
 
-    fun showProgress()
-
-    fun hideProgress()
-
 }

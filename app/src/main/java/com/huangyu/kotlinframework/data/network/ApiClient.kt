@@ -6,11 +6,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
 /**
  * Created by huangyu on 2018/3/20.
  */
-object ApiClient {
+class ApiClient @Inject constructor() {
 
     fun create(): ApiService {
         val builder = OkHttpClient.Builder()

@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * Created by huangyu on 2018/3/19.
  */
-class MainPresenter<V : IMainView, M : IMainModel> @Inject internal constructor(model: M, schedulerProvider: SchedulerProvider, disposable: CompositeDisposable) : BasePresenter<V, M>(model = model, schedulerProvider = schedulerProvider, compositeDisposable = disposable), IMainPresenter<V, M> {
+class MainPresenter<V : IMainView, M : IMainModel> @Inject internal constructor(model: M, schedulerProvider: SchedulerProvider, disposable: CompositeDisposable) : BasePresenter<V, M>(model, schedulerProvider, disposable), IMainPresenter<V, M> {
 
     override fun queryWeather(location: String) {
         model?.let {

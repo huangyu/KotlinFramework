@@ -11,6 +11,6 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("weather/now.json")
-    fun loadData(@Query("key") key: String,@Query("location") location: String): Observable<WeatherResult>
+    fun loadData(@Query("key") key: String, @Query("location") location: String): Observable<WeatherResult>
 
 }

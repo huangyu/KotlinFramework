@@ -27,4 +27,6 @@ ext {
     rxandroid2 = '2.0.1'
     rxjava2 = '2.0.2'
     butterknife = '8.8.1'
+    sqlbrite = '3.2.0'
+    room = '1.0.0'
 }

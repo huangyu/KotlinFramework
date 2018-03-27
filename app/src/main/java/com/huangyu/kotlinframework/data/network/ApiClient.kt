@@ -1,6 +1,7 @@
 package com.huangyu.kotlinframework.data.network
 
 import com.huangyu.kotlinframework.BuildConfig
+import com.huangyu.kotlinframework.util.AppConstants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -22,7 +23,7 @@ class ApiClient @Inject constructor() {
         }
         val okHttpClient = builder.build()
         val retrofit = Retrofit.Builder()
-                .baseUrl(Api.API_SERVER_URL)
+                .baseUrl(AppConstants.API_SERVER_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)

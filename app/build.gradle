@@ -5,7 +5,6 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.huangyu.kotlinframework"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -24,6 +23,7 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
